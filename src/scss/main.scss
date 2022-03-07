@@ -1,46 +1,20 @@
 /*==================== RESET STYLES ====================*/
-@import 'reset';
+@import 'import/reset.scss';
 /*==================== RESET STYLES ====================*/
 
 /*==================== FONTS ====================*/
-@import 'fonts';
-
-// @import url(''); // &subset=cyrillic-ext
-
-// @font-face {
-//   font-family: 'Train One';
-//   src: url('../../fonts') format('woff2'), url('../../fonts') format('woff');
-//   font-weight: 400;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@import 'import/fonts.scss';
 /*==================== FONTS ====================*/
 
 /*==================== VARIABLES ====================*/
 $maxWidthLayout: 1440;
 $maxWidthContainer: 1200;
 $urbanistFont: 'Urbanist', sans-serif;
-$dark-grayColor: #333;
-$whiteColor: #eee;
+$grayColor: #333;
+$whiteColor: #fff;
 /*==================== VARIABLES ====================*/
 
-/*==================== MIXINS ====================*/
-
-// responsive font
-@mixin respFz($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $addMobSize: $addSize + $addSize * 0.7;
-  @media (max-width: 767px) {
-    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidthContainer}));
-  }
-  @media (min-width: 767px) {
-    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidthContainer}));
-  }
-}
-// @include respFz(40, 14);
-// responsive font
-
-// responsive value
+/*==================== MIXIN ====================*/
 @mixin respValue($property, $startSize, $minSize, $type) {
   $addSize: $startSize - $minSize;
   @if $type==1 {
@@ -60,20 +34,20 @@ $whiteColor: #eee;
     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthLayout - 320}));
   }
 }
-// @include respValue('padding', 30, 15, 1);
-// responsive value
-
-/*==================== MIXINS ====================*/
+/*==================== MIXIN ====================*/
 
 /*==================== BASIC PARAMETERS ====================*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $urbanistFont;
   background: $dark-grayColor;
   color: $whiteColor;
-  @media (max-width: 768px) {
-    &.lock {
-      overflow: hidden;
-    }
+
+  &.lock {
+    overflow: hidden;
   }
 }
 
@@ -83,15 +57,6 @@ body {
   min-height: 100%;
   overflow: hidden;
 }
-
-// .wrapper {
-// 	min-height: 100vh;
-// 	display: grid;
-// 	grid-template:
-// 		[start] 'header' minmax(70px, auto) [row2]
-// 		[row2] 'main' 1fr [row3]
-// 		[row3] 'footer' minmax(70px, auto) [row-end] / 1fr;
-// }
 
 .page {
   flex: 1 1 auto;
