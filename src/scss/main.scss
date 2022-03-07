@@ -8,10 +8,10 @@
 
 /*==================== VARIABLES ====================*/
 $maxWidthLayout: 1440;
-$maxWidthContainer: 1200;
-$urbanistFont: 'Urbanist', sans-serif;
-$grayColor: #333;
-$whiteColor: #fff;
+$maxWidthContainer: 1078;
+$interFont: 'Inter', sans-serif;
+$blackColor: #212b31;
+$grayColor: #72787d;
 /*==================== VARIABLES ====================*/
 
 /*==================== MIXIN ====================*/
@@ -42,9 +42,9 @@ html {
 }
 
 body {
-  font-family: $urbanistFont;
-  background: $dark-grayColor;
-  color: $whiteColor;
+  font-family: $interFont;
+  font-weight: 400;
+  color: $blackColor;
 
   &.lock {
     overflow: hidden;
@@ -66,26 +66,20 @@ body {
 /*==================== REPEAT BLOCK ====================*/
 
 // container
-.container {
+[class*='__container'] {
   width: 100%;
   max-width: $maxWidthContainer + px;
   padding: 0 15px;
   margin: 0 auto;
 }
-
-// [class*="__container"] {
-//   width: 100%;
-//   max-width: $maxWidthContainer + px;
-//   padding: 0 15px;
-//   margin: 0 auto;
-// }
 // container
 
 // responsive background image
-@import 'ibg';
+@import 'import/ibg.scss';
 
 .ibg {
   position: relative;
+
   img {
     position: absolute;
     width: 100%;
