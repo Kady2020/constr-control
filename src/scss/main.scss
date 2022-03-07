@@ -1,0 +1,135 @@
+/*==================== RESET STYLES ====================*/
+@import 'reset';
+/*==================== RESET STYLES ====================*/
+
+/*==================== FONTS ====================*/
+@import 'fonts';
+
+// @import url(''); // &subset=cyrillic-ext
+
+// @font-face {
+//   font-family: 'Train One';
+//   src: url('../../fonts') format('woff2'), url('../../fonts') format('woff');
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
+/*==================== FONTS ====================*/
+
+/*==================== VARIABLES ====================*/
+$maxWidthLayout: 1440;
+$maxWidthContainer: 1200;
+$urbanistFont: 'Urbanist', sans-serif;
+$dark-grayColor: #333;
+$whiteColor: #eee;
+/*==================== VARIABLES ====================*/
+
+/*==================== MIXINS ====================*/
+
+// responsive font
+@mixin respFz($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  @media (max-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidthContainer}));
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidthContainer}));
+  }
+}
+// @include respFz(40, 14);
+// responsive font
+
+// responsive value
+@mixin respValue($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else if $type==2 {
+    //Только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthLayout - 320}));
+    }
+  } @else {
+    //Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthLayout - 320}));
+  }
+}
+// @include respValue('padding', 30, 15, 1);
+// responsive value
+
+/*==================== MIXINS ====================*/
+
+/*==================== BASIC PARAMETERS ====================*/
+body {
+  font-family: $urbanistFont;
+  background: $dark-grayColor;
+  color: $whiteColor;
+  @media (max-width: 768px) {
+    &.lock {
+      overflow: hidden;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+// .wrapper {
+// 	min-height: 100vh;
+// 	display: grid;
+// 	grid-template:
+// 		[start] 'header' minmax(70px, auto) [row2]
+// 		[row2] 'main' 1fr [row3]
+// 		[row3] 'footer' minmax(70px, auto) [row-end] / 1fr;
+// }
+
+.page {
+  flex: 1 1 auto;
+}
+/*==================== BASIC PARAMETERS ====================*/
+
+/*==================== REPEAT BLOCK ====================*/
+
+// container
+.container {
+  width: 100%;
+  max-width: $maxWidthContainer + px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// [class*="__container"] {
+//   width: 100%;
+//   max-width: $maxWidthContainer + px;
+//   padding: 0 15px;
+//   margin: 0 auto;
+// }
+// container
+
+// responsive background image
+@import 'ibg';
+
+.ibg {
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+// responsive background image
+
+/*==================== REPEAT BLOCK ====================*/
