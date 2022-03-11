@@ -233,7 +233,7 @@ body {
     content: '';
     position: absolute;
     width: 100%;
-    height: 1.1px;
+    height: 1px;
     bottom: -3.2px;
     left: 0;
     background: #036fc7;
@@ -261,21 +261,105 @@ body {
 //! header block
 .header-block {
   &_big {
+    > *:not(:last-child) {
+      margin: 0 0 18px 0;
+    }
+
+    .header-block__title {
+      @include respValue('font-size', 32, 25, 1);
+      line-height: 1.2;
+    }
+
+    .header-block__sub-title {
+      @include respValue('font-size', 20, 18, 1);
+      line-height: 1.2;
+      color: $grayColor;
+    }
   }
 
   &_small {
+    > *:not(:last-child) {
+      margin: 0 0 12px 0;
+    }
+
+    .header-block__title {
+      @include respValue('font-size', 18, 16, 1);
+      line-height: 1.2;
+    }
+
+    .header-block__sub-title {
+      @include respValue('font-size', 16, 14, 1);
+      line-height: 1.2;
+      color: $grayColor;
+    }
+  }
+
+  &_center {
+    text-align: center;
   }
 }
 //! header block
 
 //! underlined text
-.underline {
+.decor {
+  display: inline-block;
+  @include respValue('font-size', 20, 15, 1);
+  line-height: 1.2;
+
+  &__item {
+    position: relative;
+    color: $blackColor;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      @include respValue('height', 15, 7.5, 1);
+      top: 50%;
+      left: 0;
+      background: #ffd042;
+      animation: decor 5s linear infinite;
+      z-index: -1;
+    }
+  }
+
+  &__text {
+    color: $grayColor;
+  }
+
+  @keyframes decor {
+    35% {
+      transform: rotate(0) translate(0, 0);
+    }
+    40% {
+      transform: rotate(5deg) translate(0, -2px);
+    }
+    45% {
+      transform: rotate(-3deg) translate(0, -2px);
+    }
+    50% {
+      transform: rotate(5deg) translate(0, -2px);
+    }
+    55% {
+      transform: rotate(-3deg) translate(0, -2px);
+    }
+    60% {
+      transform: rotate(5deg) translate(0, -2px);
+    }
+    65% {
+      transform: rotate(-3deg) translate(0, -2px);
+    }
+    70% {
+      transform: rotate(0) translate(0, 0);
+    }
+  }
 }
 //! underlined text
 
 /*==================== REPEAT BLOCK ====================*/
 
-/*==================== HEADER=========*/
+/*==================== HEADER =========*/
 .header {
   position: fixed;
   width: 100%;
@@ -461,4 +545,4 @@ body {
     }
   }
 }
-/*==================== HEADER=========*/
+/*==================== HEADER =========*/
