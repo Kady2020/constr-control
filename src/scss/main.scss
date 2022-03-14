@@ -63,8 +63,7 @@ body {
 
   &__intro,
   &__advantages,
-  &__chaos,
-  &__control {
+  &__chaos {
     &:not(:last-child) {
       @include respValue('margin-bottom', 150, 60, 1);
     }
@@ -703,10 +702,14 @@ body {
 /*==================== CHAOS ====================*/
 
 /*==================== CONTROL ====================*/
-.control {
-  &__container {
+.page {
+  &__control,
+  &__clients {
+    @include respValue('margin-bottom', 90, 60, 1);
   }
+}
 
+.control {
   &__header-h2 {
     &:not(:last-child) {
       @include respValue('margin-bottom', 120, 90, 1);
@@ -753,3 +756,26 @@ body {
   }
 }
 /*==================== CONTROL ====================*/
+
+/*==================== CLIENTS ====================*/
+.clients {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 160px));
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 40px;
+  }
+
+  &__image {
+    max-width: 160px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+/*==================== CLIENTS ====================*/
