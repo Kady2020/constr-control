@@ -161,7 +161,7 @@ body {
 
   &:hover {
     &::before {
-      animation: highlight 0.5s linear;
+      animation: highlight 1.2s linear;
     }
   }
 
@@ -216,7 +216,7 @@ body {
     transform: translateX(-4em) skewX(-45deg);
   }
   100% {
-    transform: translateX(10em) skewX(-45deg);
+    transform: translateX(40em) skewX(-45deg);
   }
 }
 //! main button
@@ -359,7 +359,7 @@ body {
 
 /*==================== REPEAT BLOCK ====================*/
 
-/*==================== HEADER =========*/
+/*==================== HEADER ====================*/
 .header {
   position: fixed;
   width: 100%;
@@ -545,4 +545,62 @@ body {
     }
   }
 }
-/*==================== HEADER =========*/
+/*==================== HEADER ====================*/
+
+/*==================== INTRO ====================*/
+.intro {
+  &__body {
+    padding: 180px 0 0 0;
+    @include respValue('padding-top', 164, 104, 1);
+  }
+
+  &__title {
+    @include respValue('font-size', 48, 28, 1);
+    line-height: 1.2;
+    text-align: center;
+    max-width: 818px;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 16px;
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 80, 40, 0);
+    }
+
+    @media (max-width: 375px) {
+      row-gap: 16px;
+    }
+  }
+
+  &__button {
+    flex: 0 1 160px;
+
+    @media (max-width: 375px) {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__image {
+    max-width: 1040px;
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 80, 40, 0);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+/*==================== INTRO ====================*/
