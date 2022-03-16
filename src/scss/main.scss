@@ -64,7 +64,9 @@ body {
   &__intro,
   &__advantages,
   &__chaos,
-  &__about {
+  &__about,
+  &__delivery,
+  &__reliability {
     &:not(:last-child) {
       @include respValue('margin-bottom', 150, 60, 1);
     }
@@ -786,7 +788,10 @@ body {
   &__header-h2 {
     max-width: 826px;
     margin: 0 auto;
-    @include respValue('margin-bottom', 60, 30, 1);
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 60, 30, 1);
+    }
   }
 
   &__body {
@@ -811,7 +816,11 @@ body {
 
     @media (max-width: 767.98px) {
       text-align: center;
-      margin: 0 auto 20px;
+      margin: 0 auto;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -833,4 +842,145 @@ body {
 /*==================== WHAT IS ====================*/
 
 /*==================== DELIVERY ====================*/
+.delivery {
+  &__header-h2 {
+    max-width: 650px;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    row-gap: 20px;
+    column-gap: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__body-item {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 18px;
+  }
+
+  &__icon {
+    max-width: 48px;
+    place-self: start;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .decor {
+    display: block;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
 /*==================== DELIVERY ====================*/
+
+/*==================== RELIABILITY ====================*/
+.reliability {
+  &__container {
+    > *:not(:last-child) {
+      @include respValue('margin-bottom', 60, 40, 1);
+    }
+  }
+
+  &__body {
+    display: grid;
+    row-gap: 40px;
+
+    @media (min-width: 767.98px) {
+      grid-template: 1fr / repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      column-gap: 30px;
+    }
+  }
+
+  &__body-item {
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+
+    > *:not(:last-child) {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__body-icon {
+    max-width: 48px;
+    place-self: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__block-more {
+    display: grid;
+    row-gap: 20px;
+    @include respValue('column-gap', 60, 30, 1);
+    @include respValue('padding', 40, 20, 1);
+    background: #f6f8f9;
+    border-radius: 5px;
+
+    @media (min-width: 767.98px) {
+      grid-template: 1fr / 1fr minmax(auto, 150px);
+      align-items: center;
+    }
+  }
+
+  &__more-content {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+
+    @media (max-width: 767.98px) {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      row-gap: 12px;
+    }
+  }
+
+  &__more-icon {
+    flex: 0 0 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 767.98px) {
+      max-width: 48px;
+    }
+  }
+
+  &__more-text {
+    flex: 1 1 auto;
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  &__more-button {
+    justify-self: center;
+    max-width: 500px;
+    width: 100%;
+  }
+}
+/*==================== RELIABILITY ====================*/
