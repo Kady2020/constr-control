@@ -899,6 +899,23 @@ body {
     }
   }
 
+  &__header-h2 {
+    .header-block__title {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: '';
+        background: url('@img/reliability/header/01.svg') 0 0 / cover no-repeat;
+        position: absolute;
+        @include respValue('width', 42, 21, 1);
+        @include respValue('height', 40, 20, 1);
+        @include respValue('top', -26, -13, 1);
+        @include respValue('right', -34, -16, 1);
+      }
+    }
+  }
+
   &__body {
     display: grid;
     row-gap: 40px;
