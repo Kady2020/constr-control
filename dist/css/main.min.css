@@ -127,11 +127,11 @@ body.lock {
 .page {
   flex: 1 1 auto;
 }
-.page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child) {
+.page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child), .page__mobile-app:not(:last-child) {
   margin-bottom: 150px;
 }
 @media (max-width: 1078px) {
-  .page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child) {
+  .page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child), .page__mobile-app:not(:last-child) {
     margin-bottom: calc(60px + 90 * ((100vw - 320px) / 758));
   }
 }
@@ -1035,3 +1035,142 @@ body.lock {
 }
 
 /*==================== RELIABILITY ====================*/
+/*==================== MOBILE APP ====================*/
+.mobile-app {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  background: #212b31;
+  color: #fff;
+}
+@media (max-width: 1078px) {
+  .mobile-app {
+    padding-top: calc(30px + 100 * ((100vw - 320px) / 758));
+  }
+}
+@media (max-width: 1078px) {
+  .mobile-app {
+    padding-bottom: calc(30px + 100 * ((100vw - 320px) / 758));
+  }
+}
+.mobile-app > *:not(:last-child) {
+  margin-bottom: 130px;
+}
+@media (max-width: 1078px) {
+  .mobile-app > *:not(:last-child) {
+    margin-bottom: calc(60px + 70 * ((100vw - 320px) / 758));
+  }
+}
+.mobile-app__top-section {
+  display: grid;
+  row-gap: 60px;
+}
+@media (max-width: 1078px) {
+  .mobile-app__top-section {
+    row-gap: calc(40px + 20 * ((100vw - 320px) / 758));
+  }
+}
+@media (min-width: 767.98px) {
+  .mobile-app__top-section {
+    display: flex;
+    column-gap: 20px;
+  }
+}
+@media (min-width: 1440px) {
+  .mobile-app__top-section {
+    align-items: center;
+  }
+}
+.mobile-app__content {
+  flex: 0 0 100%;
+  display: flex;
+}
+.mobile-app__body > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+@media (max-width: 1078px) {
+  .mobile-app__body > *:not(:last-child) {
+    margin-bottom: calc(30px + 20 * ((100vw - 320px) / 758));
+  }
+}
+@media (min-width: 767.98px) {
+  .mobile-app__body {
+    width: 56.3%;
+  }
+}
+.mobile-app__header-list-wrapper > *:not(:last-child) {
+  margin-bottom: 24px;
+}
+.mobile-app__header-list {
+  position: relative;
+  padding: 0 0 0 30px;
+}
+.mobile-app__header-list .header-block__text {
+  color: rgba(255, 255, 255, 0.6);
+}
+.mobile-app__header-list::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  top: 5px;
+  left: 0;
+}
+.mobile-app__buttons {
+  display: grid;
+  row-gap: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+@media (min-width: 767.98px) {
+  .mobile-app__buttons {
+    grid-template: 1fr/repeat(2, minmax(auto, 160px));
+    column-gap: 16px;
+  }
+}
+.mobile-app__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 767.98px) {
+  .mobile-app__image {
+    width: 41.9%;
+    height: 34.2%;
+    flex: 0 0 calc(100vw - ((100vw - 1440px) / 2 + 793.83px + 15px));
+    transform: translateX(-100%);
+  }
+}
+.mobile-app__bottom-section-body {
+  display: grid;
+  row-gap: 40px;
+}
+@media (min-width: 767.98px) {
+  .mobile-app__bottom-section-body {
+    grid-template: 1fr/repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    column-gap: 30px;
+  }
+}
+.mobile-app__bottom-section-body-item {
+  display: grid;
+  grid-template: auto 1fr/1fr;
+}
+.mobile-app__bottom-section-body-item > *:not(:last-child) {
+  margin: 0 0 20px 0;
+}
+.mobile-app__bottom-section-body-icon {
+  max-width: 48px;
+  place-self: center;
+}
+.mobile-app__bottom-section-body-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mobile-app__header-h3 .header-block__text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/*==================== MOBILE APP ====================*/
