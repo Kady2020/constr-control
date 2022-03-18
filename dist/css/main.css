@@ -1224,7 +1224,7 @@ body.lock {
 .how-to-work__content > *:not(:last-child) {
   margin: 0 0 30px 0;
 }
-@media (max-width: 757.98px) {
+@media (max-width: 767.98px) {
   .how-to-work__content {
     display: grid;
     justify-items: center;
@@ -1274,3 +1274,5 @@ body.lock {
 }
 
 /*==================== HOW TO WORK ====================*/
+/*==================== WHY WE ARE ====================*/
+/*==================== WHY WE ARE ====================*/
