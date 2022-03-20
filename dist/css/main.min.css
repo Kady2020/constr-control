@@ -127,11 +127,11 @@ body.lock {
 .page {
   flex: 1 1 auto;
 }
-.page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child), .page__mobile-app:not(:last-child), .page__how-to-work:not(:last-child) {
+.page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child), .page__mobile-app:not(:last-child), .page__how-to-work:not(:last-child), .page__why-we-are:not(:last-child) {
   margin-bottom: 150px;
 }
 @media (max-width: 1078px) {
-  .page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child), .page__mobile-app:not(:last-child), .page__how-to-work:not(:last-child) {
+  .page__intro:not(:last-child), .page__advantages:not(:last-child), .page__chaos:not(:last-child), .page__about:not(:last-child), .page__delivery:not(:last-child), .page__reliability:not(:last-child), .page__mobile-app:not(:last-child), .page__how-to-work:not(:last-child), .page__why-we-are:not(:last-child) {
     margin-bottom: calc(60px + 90 * ((100vw - 320px) / 758));
   }
 }
@@ -1275,4 +1275,137 @@ body.lock {
 
 /*==================== HOW TO WORK ====================*/
 /*==================== WHY WE ARE ====================*/
+.why-we-are__header-h2:not(:last-child) {
+  margin-bottom: 60px;
+}
+@media (max-width: 1078px) {
+  .why-we-are__header-h2:not(:last-child) {
+    margin-bottom: calc(40px + 20 * ((100vw - 320px) / 758));
+  }
+}
+.why-we-are__body {
+  display: grid;
+  row-gap: 60px;
+}
+@media (min-width: 767.98px) {
+  .why-we-are__body {
+    grid-template: 1fr/repeat(2, 1fr);
+    column-gap: 60px;
+  }
+}
+.why-we-are__content > *:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+.why-we-are__content-item {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+}
+.why-we-are__content-icon {
+  max-width: 48px;
+  place-self: start;
+}
+.why-we-are__content-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slick-track {
+  display: flex;
+  align-items: flex-start;
+}
+
+.slider {
+  position: relative;
+  min-width: 0;
+  align-self: start;
+  background: #f6f8f9;
+  border-radius: 5px;
+  padding: 30px;
+}
+.slider .slick-list {
+  overflow: hidden;
+}
+.slider .slick-list:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+.slider .slick-dots {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 8px;
+}
+.slider .slick-dots li.slick-active button {
+  background: #036fc7;
+}
+.slider .slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background: rgba(3, 111, 199, 0.2);
+  border-radius: 50%;
+}
+.slider__item > *:not(:last-child) {
+  margin: 0 0 28px 0;
+}
+.slider__text {
+  position: relative;
+  font-size: 30px;
+}
+@media (max-width: 1078px) {
+  .slider__text {
+    font-size: calc(20px + 10 * ((100vw - 320px) / 758));
+  }
+}
+.slider__text::before {
+  content: "";
+  background: url("../img/why-we-are/slider/01.png") 0 0/cover no-repeat;
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 1078px) {
+  .slider__text::before {
+    width: calc(33.3px + 66.7 * ((100vw - 320px) / 758));
+  }
+}
+@media (max-width: 1078px) {
+  .slider__text::before {
+    height: calc(26.6px + 53.4 * ((100vw - 320px) / 758));
+  }
+}
+.slider__author {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.slider__author-avatar {
+  flex: 0 0 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.slider__author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider__author-info-wrapper {
+  font-size: 16px;
+  line-height: 1.2;
+}
+.slider__author-info-wrapper > *:not(:last-child) {
+  margin: 0 0 4px 0;
+}
+.slider__author-name {
+  color: #212b31;
+}
+.slider__author-position {
+  color: #72787d;
+}
+
 /*==================== WHY WE ARE ====================*/
+/*==================== FEATURES ====================*/
+/*==================== FEATURES ====================*/
