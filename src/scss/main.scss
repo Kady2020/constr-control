@@ -70,11 +70,14 @@ body {
   &__mobile-app,
   &__how-to-work,
   &__why-we-are,
-  &__features,
-  &__are-you-ready {
+  &__features {
     &:not(:last-child) {
       @include respValue('margin-bottom', 150, 60, 1);
     }
+  }
+
+  &:not(:last-child) {
+    @include respValue('margin-bottom', 150, 60, 1);
   }
 }
 /*==================== BASIC PARAMETERS ====================*/
@@ -1468,3 +1471,92 @@ body {
   }
 }
 /*==================== ARE YOU READY ====================*/
+
+/*==================== FOOTER ====================*/
+.footer {
+  color: $grayColor;
+
+  &__container {
+    > *:not(:last-child) {
+      @include respValue('margin-bottom', 150, 60, 1);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template: 1fr / 2fr repeat(3, 1fr);
+    justify-items: center;
+    column-gap: 30px;
+
+    @media (max-width: 767.98px) {
+      grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+      row-gap: 30px;
+    }
+
+    @media (max-width: 425.98px) {
+      grid-template: 1fr / 1fr;
+    }
+  }
+
+  &__list {
+    > *:not(:last-child) {
+      margin: 0 0 8px 0;
+    }
+
+    @media (max-width: 767.98px) {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    margin: 0 0 20px 0;
+  }
+
+  &__link {
+    font-size: 13px;
+    line-height: 1.1;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    min-height: 33px;
+    font-size: 15px;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    color: $blackColor;
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    @include respValue('min-height', 90, 60, 1);
+    border-top: 1px solid #dadedf;
+    font-size: 13px;
+    line-height: 1.1;
+
+    @media (max-width: 600.98px) {
+      display: grid;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__copyright-text {
+    .link-button {
+      font-size: 13px;
+      line-height: 1.1;
+    }
+  }
+
+  &__copyright-text,
+  &__copyright-policy {
+    font-size: 13px;
+    line-height: 1.1;
+  }
+}
+/*==================== FOOTER ====================*/
