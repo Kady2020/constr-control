@@ -7,5 +7,4 @@ import "./libraries/slick.min.js";
 import "./modules/header-scroll.js";
 import "./modules/burger-menu.js";
 import "./modules/slick-slider.js";
-import "./modules/pop-up.js";
 

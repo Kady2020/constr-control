@@ -1560,3 +1560,99 @@ body {
   }
 }
 /*==================== FOOTER ====================*/
+
+/*==================== POP UP ====================*/
+.pop-up {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  transform: translateY(-100%) scale(0);
+  transition: all 0.3s linear;
+
+  &.active {
+    background: rgba(51, 51, 51, 0.9);
+    transform: translateY(0) scale(1);
+  }
+
+  &__container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__body {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  &__title {
+    position: relative;
+    display: grid;
+    font-weight: 900;
+    @include respValue('font-size', 60, 30, 1);
+
+    &:not(:last-child) {
+      margin: 0 0 60px 0;
+    }
+
+    span {
+      &:last-of-type {
+        @include respValue('margin-left', 50, 20, 1);
+
+        &::before {
+          content: '';
+          position: absolute;
+          background: url('@img/intro/icons/01.svg') 0 0 / cover no-repeat;
+          @include respValue('width', 50, 20, 1);
+          @include respValue('height', 60, 30, 1);
+          bottom: 18%;
+          left: 0;
+          z-index: 3;
+        }
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    max-width: 270px;
+    width: 100%;
+
+    *:not(:last-child) {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  &__username,
+  &__password {
+    border: 1px solid #333;
+    border-radius: 5px;
+    min-height: 40px;
+    padding: 0 0 0 7px;
+
+    &:focus {
+      box-shadow: 0 0 4px 0 rgba(51, 51, 51, 0.7);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    font-size: 20px;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+  }
+}
+/*==================== POP UP ====================*/
